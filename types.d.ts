@@ -12,9 +12,9 @@ export interface FileType {
  */
 export interface TestData {
   /** Unique ID of test report data to send to multiple times. */
-  rid?: string;
+  rid: string;
   /** The title of the test case being reported. */
-  title: string;
+  title?: string;
 
   /** The title of the test suite to which the test case belongs. Required when creating a new test suite inside Testomat.io. */
   suite_title?: string;
@@ -91,6 +91,9 @@ export interface RunData {
 
   /** The number of test cases that were skipped in the test run. */
   skipped_count?: number;
+
+  /** If duration is pre-set value as in XML tests set it */
+  duration?: number;
 
   /**
    * An array of `TestData` objects representing the individual test cases in the test run.
