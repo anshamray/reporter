@@ -41,15 +41,23 @@ describe('SlackPipe tests', () => {
 
     expect(slackPipe.isEnabled).to.be.true;
 
-    // Add a test
+    // Add a passed test
     slackPipe.addTest({
-      title: 'Test Message from Automated Test',
+      title: 'Successful Test',
       status: 'passed',
       run_time: 1000
     });
 
-    // Send the report
-    await slackPipe.finishRun({ status: 'passed' });
+    // Add a failed test
+    slackPipe.addTest({
+      title: 'Failed Test',
+      status: 'failed',
+      run_time: 800,
+      error: 'Example error message'
+    });
+
+    // Send the report with overall failed status
+    await slackPipe.finishRun({ status: 'failed' });
   });
 
   it('should not enable pipe without credentials', () => {
