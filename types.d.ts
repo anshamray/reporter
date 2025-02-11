@@ -16,6 +16,9 @@ export interface TestData {
   /** The title of the test case being reported. */
   title?: string;
 
+  /** Number of retries for this test */
+  retry?: number;
+
   /** The title of the test suite to which the test case belongs. Required when creating a new test suite inside Testomat.io. */
   suite_title?: string;
 
