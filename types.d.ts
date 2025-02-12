@@ -19,6 +19,9 @@ export interface TestData {
   /** Number of retries for this test */
   retry?: number;
 
+  /** Whether the test was retried */
+  willBeRetried?: boolean;
+
   /** The title of the test suite to which the test case belongs. Required when creating a new test suite inside Testomat.io. */
   suite_title?: string;
 

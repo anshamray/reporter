@@ -8,4 +8,8 @@ describe('Suite 1', () => {
   test('Test some more addition', () => {
     expect(1 + 2).toBe(3);
   });
+
+  test('Test multiplication', () => {
+    expect(2 * 3).toBe(6);
+  });
 });

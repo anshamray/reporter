@@ -41,19 +41,27 @@ describe('SlackPipe tests', () => {
 
     expect(slackPipe.isEnabled).to.be.true;
 
-    // Add a passed test
+    // Add a passed test with step information
     slackPipe.addTest({
       title: 'Successful Test',
       status: 'passed',
-      run_time: 1000
+      run_time: 1000,
+      steps: ['Step 1: passed',
+        'Step 2: passed'],
+      message: 'Test passed',
+      stack: '################[ Steps ]################\nStep 1: Do something (100ms)\nStep 2: Do somehing else (200ms)'
     });
 
-    // Add a failed test
+    // Add a failed test with step information
     slackPipe.addTest({
       title: 'Failed Test',
       status: 'failed',
       run_time: 800,
-      error: 'Example error message'
+      error: 'Example error message',
+      steps: ['Step 1: passed',
+        'Step 2: failed'],
+      message: 'This is a stack trace',
+      stack: '################[ Steps ]################\nStep 1: Do something (150ms)\nStep 2: Failed action (300ms)'
     });
 
     // Send the report with overall failed status

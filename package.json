@@ -51,7 +51,7 @@
     "lint": "eslint lib",
     "lint:fix": "eslint lib --fix",
     "format": "npm run lint:fix && npm run pretty:fix",
-    "test": "mocha tests/**",
+    "test": "mocha",
     "init": "cd ./tests/adapter/examples/cucumber && npm i",
     "test:adapter": "mocha './tests/adapter/index.test.js'",
     "test:pipes": "mocha './tests/pipes/*_test.js'",
